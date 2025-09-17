@@ -1,0 +1,7 @@
+services:
+  - type: web
+    name: labelstudio
+    env: python
+    plan: free
+    buildCommand: "pip install -r requirements.txt"
+    startCommand: "label-studio start --host 0.0.0.0 --port 8080"
