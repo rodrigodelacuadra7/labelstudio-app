@@ -14,3 +14,5 @@ services:
         value: "true"
       - key: DEBUG
         value: "true"
+      - key: LABEL_STUDIO_HOST
+        value: "https://labelstudio-app.onrender.com"
