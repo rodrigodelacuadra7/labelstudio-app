@@ -4,4 +4,13 @@ services:
     env: python
     plan: free
     buildCommand: "pip install -r requirements.txt"
-    startCommand: "label-studio start --host 0.0.0.0 --port 8080"
+    startCommand: "label-studio start --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: ALLOWED_HOSTS
+        value: "labelstudio-app.onrender.com"
+      - key: CSRF_TRUSTED_ORIGINS
+        value: "https://labelstudio-app.onrender.com"
+      - key: SSRF_PROTECTION_ENABLED
+        value: "true"
+      - key: DEBUG
+        value: "true"
